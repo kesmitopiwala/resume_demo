@@ -36,7 +36,7 @@ class SimpleOutlinedButton extends StatelessWidget {
         child: OutlinedButton(
           onPressed: onPressed,
           style: OutlinedButton.styleFrom(
-            backgroundColor: backgroundColor ?? AppColor.primaryColor,
+            backgroundColor: backgroundColor ?? Colors.green.shade50,
             onSurface: color != null ? color!.withOpacity(0.4) : null,
             side: BorderSide(width: 2.0, color: color ?? AppColor.primaryColor),
           ),
@@ -84,12 +84,13 @@ class SimpleElevatedButton extends StatelessWidget {
         onPressed: onPressed,
         child: CustomWidget.text(
           text,
-          color: AppColor.whiteColor,
+          color: AppColor.primaryColor,
           fontWeight: FontWeight.bold,
           textAlign: TextAlign.center,
+          fontSize: 18
         ),
         style: ElevatedButton.styleFrom(
-          primary: color ?? AppColor.primaryColor,
+          primary: color ?? Colors.green.shade50,
           shape: roundedRadius == null
               ? CustomWidget.roundedRectangleBorderAll(10)
               : CustomWidget.roundedRectangleBorderAll(roundedRadius!),

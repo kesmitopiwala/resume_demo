@@ -6,6 +6,7 @@ import 'package:resume_demo/Models/pdf_model.dart';
 import 'package:resume_demo/Utils/constants.dart';
 import 'package:resume_demo/Utils/custom_widget.dart';
 import 'package:resume_demo/Widgets/buttons.dart';
+import 'package:resume_demo/Routes/route.dart' as rt;
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,7 +29,6 @@ class HomeScreen extends ConsumerWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    LogoAndTitleRow(),
                     Expanded(
                       child: Row(
                         children: const [
@@ -48,7 +48,6 @@ class HomeScreen extends ConsumerWidget {
           color: AppColor.primaryColor,
           child: Column(
             children: const [
-              LogoAndTitleColumn(),
               ExampleImage(),
               SizedBox(height: 16),
               LoginButton(true),
@@ -71,10 +70,9 @@ class ExampleImage extends StatelessWidget {
       child: Container(
         color: AppColor.primaryColor,
         child: Center(
-          child: Container(
-            color: AppColor.whiteColor,
+          child: Image.asset(
+            "assets/logo.png",
             height: 400,
-            child: Center(child: CustomWidget.text("Resume Builder App")),
           ),
         ),
       ),
@@ -113,9 +111,9 @@ class LoginButton extends ConsumerWidget {
                   onPressed: () {
                     ref.watch(pdfProvider.notifier).editPdf(PdfModel.createEmpty().copyWith(pdfId: 'noSave'),);
 
-                    Get.toNamed('/resume');
+                    Get.toNamed(rt.Route.resumeEditScreen);
                   },
-                  text: 'Continue without signing in'),
+                  text: 'Continue'),
               const SizedBox(
                 height: 16,
               ),
@@ -127,75 +125,4 @@ class LoginButton extends ConsumerWidget {
   }
 }
 
-class LogoAndTitleRow extends StatelessWidget {
-  const LogoAndTitleRow({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: AppColor.primaryColor,
-      child: Row(
-        children: [
-          Container(
-            margin: const EdgeInsets.all(36),
-            height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-              borderRadius: CustomWidget.roundedShapeAll(20),
-              color: AppColor.whiteColor
-            ),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomWidget.text(
-                'CREATE A FREE RESUME NOW!',
-                fontWeight: FontWeight.bold,
-                color: AppColor.primaryColor
-              ),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class LogoAndTitleColumn extends StatelessWidget {
-  const LogoAndTitleColumn({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: AppColor.primaryColor,
-      child: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.all(36),
-            height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-              borderRadius: CustomWidget.roundedShapeAll(20),
-              color: AppColor.whiteColor
-            ),
-          ),
-          CustomWidget.text(
-            'CREATE A FREE RESUME NOW!',
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-            color: AppColor.primaryColor
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-        ],
-      ),
-    );
-  }
-}
 

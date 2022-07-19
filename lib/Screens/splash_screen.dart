@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         body: Container(
       child: Center(
         child: CustomWidget.text("Welcome to resume builder app",
-            fontWeight: FontWeight.bold, color: AppColor.primaryColor),
+            fontWeight: FontWeight.bold, color: AppColor.primaryColor,fontSize: 20),
       ),
     ));
   }

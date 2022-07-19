@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:resume_demo/Utils/constants.dart';
-import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:resume_demo/Utils/constants.dart';
-import 'package:sizer/sizer.dart';
 
 class CustomWidget {
   ///
   /// This method is used for show heading text in ui with some prebuild properties
   ///
   static Text text(String text,
-      {Color color = AppColor.whiteColor,
+      {Color color = AppColor.primaryColor,
       FontWeight fontWeight = FontWeight.normal,
       double fontSize = 16.0,
       double letterSpacing = 0.5,
@@ -27,7 +24,7 @@ class CustomWidget {
               decoration: decoration,
               color: color,
               fontWeight: fontWeight,
-              fontSize: fontSize.sp,
+              fontSize: fontSize,
               letterSpacing: letterSpacing,
               overflow: overflow),
         ));
@@ -39,8 +36,8 @@ class CustomWidget {
       double width = 4.0,
       BoxFit fit = BoxFit.contain}) {
     return SizedBox(
-      height: height.h,
-      width: width.h,
+      height: height,
+      width: width,
       child: Image.asset(
         image!,
         fit: fit,
@@ -146,7 +143,7 @@ class CustomWidget {
         ),
         hintText: hintText,
         hintStyle: TextStyle(
-            fontSize: 12.0.sp,
+            fontSize: 12.0,
             letterSpacing: 0.5,
             fontFamily: 'SFProText',
             color: AppColor.whiteColor.withOpacity(0.5)),
@@ -181,7 +178,7 @@ class CustomWidget {
                   padding: const EdgeInsets.only(right: 10, left: 10),
                   child: Image.asset(
                     suffixImage!,
-                    height: 5.0.h,
+                    height: 5.0,
                   ),
                 ))
             : text(''),
@@ -205,7 +202,7 @@ class CustomWidget {
         ),
         hintText: hintText,
         hintStyle: TextStyle(
-            fontSize: 12.0.sp,
+            fontSize: 12.0,
             letterSpacing: 0.5,
             fontFamily: 'SFProText',
             color: AppColor.textPrimaryColor.withOpacity(0.5)),
@@ -268,7 +265,7 @@ class CustomWidget {
       children: [
         CustomWidget.text(headingText!,
             fontSize: 12.0, color: AppColor.textHeadigColor),
-        SizedBox(height: 1.0.h),
+        SizedBox(height: 1.0),
         TextField(
           cursorColor: AppColor.primaryColor,
           decoration: CustomWidget.customInputDecoration(hintText: hintText!),
@@ -301,7 +298,7 @@ class CustomWidget {
 
   static textFieldTextStyle() {
     return TextStyle(
-        fontSize: 11.0.sp,
+        fontSize: 11.0,
         letterSpacing: 0.5,
         fontFamily: 'SFProText',
         color: AppColor.whiteColor);
@@ -309,7 +306,7 @@ class CustomWidget {
 
   static TextStyle selectedLabelStyle({required FontWeight fontW}) {
     return TextStyle(
-        fontSize: 12.0.sp,
+        fontSize: 12.0,
         letterSpacing: 0.5,
         fontFamily: 'SFProText',
         fontWeight: fontW,
@@ -381,4 +378,19 @@ class CustomWidget {
               : Radius.circular(bottomRight)),
     );
   }
+
+  TextStyle subtitle14 = GoogleFonts.nunito(
+    textStyle: const TextStyle(
+      inherit: true,
+      color: AppColor.textPrimaryColor,
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+      letterSpacing: 0.1,
+      textBaseline: TextBaseline.alphabetic,
+      leadingDistribution: TextLeadingDistribution.even,
+      debugLabel: 'Subtitle2',
+      overflow: TextOverflow.fade,
+    ),
+  );
 }

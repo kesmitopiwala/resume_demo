@@ -21,7 +21,7 @@ class AppPages {
         transition: transition),
     GetPage(
         name: Route.resumeEditScreen,
-        page: () => const ResumeEditScreen(),
+        page: () => const ResumeEditScreen(null),
         transition: transition),
   ];
 }
