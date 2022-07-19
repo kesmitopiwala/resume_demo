@@ -12,13 +12,13 @@ class CustomWidget {
   ///
   static Text text(String text,
       {Color color = AppColor.whiteColor,
-        FontWeight fontWeight = FontWeight.normal,
-        double fontSize = 16.0,
-        double letterSpacing = 0.5,
-        TextAlign textAlign = TextAlign.center,
-        int? maxLine,
-        TextOverflow? overflow,
-        TextDecoration decoration = TextDecoration.none}) {
+      FontWeight fontWeight = FontWeight.normal,
+      double fontSize = 16.0,
+      double letterSpacing = 0.5,
+      TextAlign textAlign = TextAlign.center,
+      int? maxLine,
+      TextOverflow? overflow,
+      TextDecoration decoration = TextDecoration.none}) {
     return Text(text,
         textAlign: textAlign,
         maxLines: maxLine,
@@ -35,9 +35,9 @@ class CustomWidget {
 
   static customAssetImageWidget(
       {String? image,
-        double height = 4.0,
-        double width = 4.0,
-        BoxFit fit = BoxFit.contain}) {
+      double height = 4.0,
+      double width = 4.0,
+      BoxFit fit = BoxFit.contain}) {
     return SizedBox(
       height: height.h,
       width: width.h,
@@ -50,14 +50,14 @@ class CustomWidget {
 
   static GestureDetector customButton(
       {required Function callBack,
-        required double height,
-        required double width,
-        required String btnText,
-        double borderRadius = 20.0,
-        FontWeight fontWeight = FontWeight.w700,
-        Color color = AppColor.primaryColor,
-        Color textColor = AppColor.primaryColor,
-        double textSize = 12.0}) {
+      required double height,
+      required double width,
+      required String btnText,
+      double borderRadius = 20.0,
+      FontWeight fontWeight = FontWeight.w700,
+      Color color = AppColor.primaryColor,
+      Color textColor = AppColor.primaryColor,
+      double textSize = 12.0}) {
     return GestureDetector(
       onTap: () => callBack(),
       child: Container(
@@ -101,42 +101,42 @@ class CustomWidget {
   ///
   static InputDecoration customInputDecoration(
       {required String hintText,
-        bool? isSufixShow = false,
-        bool? isPrefixShow = false,
-        String? prefixImage,
-        Function? onTapSuffix,
-        EdgeInsets contentPadding =
-        const EdgeInsets.only(top: 15, bottom: 15, right: 0),
-        String? suffixIcon}) {
+      bool? isSufixShow = false,
+      bool? isPrefixShow = false,
+      String? prefixImage,
+      Function? onTapSuffix,
+      EdgeInsets contentPadding =
+          const EdgeInsets.only(top: 15, bottom: 15, right: 0),
+      String? suffixIcon}) {
     return InputDecoration(
         filled: true,
         fillColor: AppColor.textFieldColor,
         isDense: true,
         prefixIconConstraints:
-        BoxConstraints(minWidth: isPrefixShow! ? 20 : 10, maxHeight: 15),
+            BoxConstraints(minWidth: isPrefixShow! ? 20 : 10, maxHeight: 15),
         suffixIconConstraints:
-        BoxConstraints(minWidth: isSufixShow! ? 20 : 10, maxHeight: 15),
+            BoxConstraints(minWidth: isSufixShow! ? 20 : 10, maxHeight: 15),
         suffixIcon: isSufixShow
             ? GestureDetector(
-          onTap: () => onTapSuffix!(),
-          child: text('Change',
-              fontSize: 10.0,
-              fontWeight: FontWeight.w600,
-              color: Color(0xFFFF881B),
-              decoration: TextDecoration.underline),
-        )
+                onTap: () => onTapSuffix!(),
+                child: text('Change',
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFFFF881B),
+                    decoration: TextDecoration.underline),
+              )
             : text(''),
         prefixIcon: isPrefixShow
             ? Padding(
-          padding: const EdgeInsets.only(right: 10, left: 10),
-          child: Image.asset(
-            prefixImage!,
-          ),
-        )
+                padding: const EdgeInsets.only(right: 10, left: 10),
+                child: Image.asset(
+                  prefixImage!,
+                ),
+              )
             : Padding(
-          padding: const EdgeInsetsDirectional.only(start: 0.0),
-          child: text(''),
-        ),
+                padding: const EdgeInsetsDirectional.only(start: 0.0),
+                child: text(''),
+              ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
           borderSide: const BorderSide(
@@ -158,44 +158,44 @@ class CustomWidget {
   ///
   static InputDecoration customInputDecorationImage(
       {required String hintText,
-        bool? isSufixShow = false,
-        bool? isPrefixShow = false,
-        String? prefixImage,
-        String? suffixImage,
-        Function? onTapSuffix,
-        EdgeInsets contentPadding =
-        const EdgeInsets.only(top: 15, bottom: 15, right: 0),
-        String? suffixIcon}) {
+      bool? isSufixShow = false,
+      bool? isPrefixShow = false,
+      String? prefixImage,
+      String? suffixImage,
+      Function? onTapSuffix,
+      EdgeInsets contentPadding =
+          const EdgeInsets.only(top: 15, bottom: 15, right: 0),
+      String? suffixIcon}) {
     return InputDecoration(
         filled: true,
         fillColor: AppColor.textFieldColor,
         isDense: true,
         prefixIconConstraints:
-        BoxConstraints(minWidth: isPrefixShow! ? 20 : 10, maxHeight: 15),
+            BoxConstraints(minWidth: isPrefixShow! ? 20 : 10, maxHeight: 15),
         suffixIconConstraints:
-        BoxConstraints(minWidth: isSufixShow! ? 20 : 10, maxHeight: 15),
+            BoxConstraints(minWidth: isSufixShow! ? 20 : 10, maxHeight: 15),
         suffixIcon: isSufixShow
             ? GestureDetector(
-            onTap: () => onTapSuffix!(),
-            child: Padding(
-              padding: const EdgeInsets.only(right: 10, left: 10),
-              child: Image.asset(
-                suffixImage!,
-                height: 5.0.h,
-              ),
-            ))
+                onTap: () => onTapSuffix!(),
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 10, left: 10),
+                  child: Image.asset(
+                    suffixImage!,
+                    height: 5.0.h,
+                  ),
+                ))
             : text(''),
         prefixIcon: isPrefixShow
             ? Padding(
-          padding: const EdgeInsets.only(right: 10, left: 10),
-          child: Image.asset(
-            prefixImage!,
-          ),
-        )
+                padding: const EdgeInsets.only(right: 10, left: 10),
+                child: Image.asset(
+                  prefixImage!,
+                ),
+              )
             : Padding(
-          padding: const EdgeInsetsDirectional.only(start: 0.0),
-          child: text(''),
-        ),
+                padding: const EdgeInsetsDirectional.only(start: 0.0),
+                child: text(''),
+              ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
           borderSide: const BorderSide(
@@ -217,41 +217,41 @@ class CustomWidget {
   ///
   static InputDecoration customInputDecorationHouseServices(
       {bool? isSufixShow = false,
-        bool? isPrefixShow = false,
-        String? prefixImage,
-        Function? onTapSuffix,
-        EdgeInsets contentPadding =
-        const EdgeInsets.only(top: 15, bottom: 15, right: 0),
-        String? suffixIcon}) {
+      bool? isPrefixShow = false,
+      String? prefixImage,
+      Function? onTapSuffix,
+      EdgeInsets contentPadding =
+          const EdgeInsets.only(top: 15, bottom: 15, right: 0),
+      String? suffixIcon}) {
     return InputDecoration(
         filled: true,
         fillColor: AppColor.whiteColor,
         isDense: true,
         prefixIconConstraints:
-        BoxConstraints(minWidth: isPrefixShow! ? 20 : 10, maxHeight: 15),
+            BoxConstraints(minWidth: isPrefixShow! ? 20 : 10, maxHeight: 15),
         suffixIconConstraints:
-        BoxConstraints(minWidth: isSufixShow! ? 20 : 10, maxHeight: 15),
+            BoxConstraints(minWidth: isSufixShow! ? 20 : 10, maxHeight: 15),
         suffixIcon: isSufixShow
             ? GestureDetector(
-          onTap: () => onTapSuffix!(),
-          child: text('Change',
-              fontSize: 10.0,
-              fontWeight: FontWeight.w600,
-              color: Color(0xFFFF881B),
-              decoration: TextDecoration.underline),
-        )
+                onTap: () => onTapSuffix!(),
+                child: text('Change',
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFFFF881B),
+                    decoration: TextDecoration.underline),
+              )
             : text(''),
         prefixIcon: isPrefixShow
             ? Padding(
-          padding: const EdgeInsets.only(right: 10, left: 10),
-          child: Image.asset(
-            prefixImage!,
-          ),
-        )
+                padding: const EdgeInsets.only(right: 10, left: 10),
+                child: Image.asset(
+                  prefixImage!,
+                ),
+              )
             : Padding(
-          padding: const EdgeInsetsDirectional.only(start: 0.0),
-          child: text(''),
-        ),
+                padding: const EdgeInsetsDirectional.only(start: 0.0),
+                child: text(''),
+              ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
           borderSide: const BorderSide(
@@ -325,6 +325,60 @@ class CustomWidget {
           primary: Colors.green,
         ),
       ),
+    );
+  }
+
+  static BorderRadius roundedShapeOnly(
+      {double? topLeft,
+      double? bottomLeft,
+      double? topRight,
+      double? bottomRight}) {
+    return BorderRadius.only(
+        topLeft: topLeft == null
+            ? const Radius.circular(0)
+            : Radius.circular(topLeft),
+        bottomLeft: bottomLeft == null
+            ? const Radius.circular(0)
+            : Radius.circular(bottomLeft),
+        topRight: topRight == null
+            ? const Radius.circular(0)
+            : Radius.circular(topRight),
+        bottomRight: bottomRight == null
+            ? const Radius.circular(0)
+            : Radius.circular(bottomRight));
+  }
+
+  static BorderRadius roundedShapeAll(double radius) {
+    return BorderRadius.all(Radius.circular(radius));
+  }
+
+  static RoundedRectangleBorder roundedRectangleBorderAll(double radius) {
+    return RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(radius),
+      ),
+    );
+  }
+
+  static RoundedRectangleBorder roundedRectangleBorderOnly(
+      {double? topLeft,
+      double? bottomLeft,
+      double? topRight,
+      double? bottomRight}) {
+    return RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+          topLeft: topLeft == null
+              ? const Radius.circular(0)
+              : Radius.circular(topLeft),
+          bottomLeft: bottomLeft == null
+              ? const Radius.circular(0)
+              : Radius.circular(bottomLeft),
+          topRight: topRight == null
+              ? const Radius.circular(0)
+              : Radius.circular(topRight),
+          bottomRight: bottomRight == null
+              ? const Radius.circular(0)
+              : Radius.circular(bottomRight)),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:uuid/uuid.dart';
 
 //Colors constants
 class AppColor {
@@ -17,3 +17,6 @@ class AppColor {
   static const blueColor = Color(0xff60a0f0);
   static const scaffoldBackgroundColor = Color(0xff1f1d2c);
 }
+
+///Uuid
+Uuid uuid = const Uuid();
